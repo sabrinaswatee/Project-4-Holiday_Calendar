@@ -2,6 +2,7 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import Moment from 'moment';
+import DateList from './DateList.js'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
@@ -11,34 +12,37 @@ class App extends React.Component {
     super (props)
     this.handleStart = this.handleStart.bind(this);
     this.handleEnd = this.handleEnd.bind(this);
+    this.buttonClicked = this.buttonClicked.bind(this);
     this.state = {
       startDate: Moment(),
-      endDate: Moment()
+      endDate: Moment(),
+      showDateList: 'none'
     };
   }
 
   handleStart (date) {
     this.setState({
       startDate: date,
-      endDate: date
+      endDate: date,
+      showDateList: 'none'
     });
   }
 
   handleEnd (date) {
     this.setState({
-      endDate: date
+      endDate: date,
+      showDateList: 'none'
     });
   }
 
   buttonClicked () {
-    // want to clear the dates
-    // isClearable={true}
-    // placeholderText=""
-
-    // create elements of all the days
+    this.setState({showDateList : 'block'});
   }
 
   render () {
+
+    const visibility = this.state.showDateList;
+
     return <div>
       <label htmlFor="startDate">Start date</label>
       <DatePicker
@@ -60,7 +64,11 @@ class App extends React.Component {
         onChange={this.handleEnd}
       />
 
-      <button onChange={this.buttonClicked}>Pick Dates</button>
+      <button onClick={this.buttonClicked}>Pick Dates</button>
+
+      <div style={{display: visibility}}>
+        <DateList date={this.state} />
+      </div>
     </div>
   }
 
