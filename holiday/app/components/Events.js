@@ -1,22 +1,32 @@
+// <PlacesAutocomplete inputProps={inputProps} />
 
 import React from 'react'
+// import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
 export default class Events extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {items: [], text: ''};
+    // this.onChange = (text) => this.setState({ text });
   }
 
   render() {
+    // const inputProps = {
+    //   value: this.state.text,
+    //   onChange: this.onChange,
+    // }
+
     return (
       <div>
-        <EventsList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={this.state.text} />
+          <input placeholder="Search for a place" onChange={this.handleChange} value={this.state.text} />
         </form>
+        <div>
+          <EventsList items={this.state.items} />
+        </div>
       </div>
     );
   }
@@ -35,6 +45,10 @@ export default class Events extends React.Component {
       items: prevState.items.concat(newItem),
       text: ''
     }));
+  //   geocodeByAddress(this.state.text)
+  //     .then(results => getLatLng(results[0]))
+  //     .then(latLng => console.log('Success', latLng))
+  //     .catch(error => console.error('Error', error))
   }
 }
 
@@ -49,5 +63,3 @@ class EventsList extends React.Component {
     );
   }
 }
-
-// ReactDOM.render(<Events />, mountNode);

@@ -1,7 +1,67 @@
 
 body {
-  background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/85282/580/386/m1/fpnw/wm0/wanderlust-.jpg?1395104083&s=33b9f6946ab2a41085beeff7dd98c2fe");
+  background-image: url("http://3c9bl93o71m619w9kn2rfwinkdh.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/Travel-Friend-Planner1.jpg");
+  background-color: beige;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  /*text-align: center;*/
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  max-height: auto;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(1,1,1,1)), to(rgba(0,0,0,0)));
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#header {
+  margin-top: 55%;
   text-align: center;
+}
+
+#tagline {
+  display: flex;
+  justify-content: center;
+  font-size: 1.1em;
+}
+
+#app {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#app button {
+  margin: 2%;
+}
+
+#eventsOnDates div {
+  margin-left: 2%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#eventsOnDates div label {
+  width: 9em;
+  text-align: left;
+}
+
+.start .end {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 15px;
+  width: 50px;
+  text-decoration: none;
 }

@@ -30,6 +30,7 @@
     "react": "^15.6.1",
     "react-datepicker": "^0.53.0",
     "react-dom": "^15.6.1",
+    "react-places-autocomplete": "^5.4.2",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"
   }
