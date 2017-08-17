@@ -4,7 +4,6 @@ body {
   background-color: beige;
   background-repeat: no-repeat;
   background-size: 100%;
-  /*text-align: center;*/
   margin: 0 auto;
 }
 
@@ -43,6 +42,10 @@ footer {
   margin: 2%;
 }
 
+#eventsOnDates {
+  margin-top: 2%;
+}
+
 #eventsOnDates div {
   margin-left: 2%;
   display: flex;
@@ -51,6 +54,14 @@ footer {
 
 #eventsOnDates div label {
   width: 9em;
+  text-align: left;
+}
+
+#eventsList {
+  display: run-in;
+}
+
+#events {
   text-align: left;
 }
 

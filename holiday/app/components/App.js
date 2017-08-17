@@ -10,15 +10,28 @@ class App extends React.Component {
 
   constructor (props) {
     super (props)
+    this.handleButtonClick1 = this.handleButtonClick1.bind(this);
+    this.handleButtonClick3 = this.handleButtonClick3.bind(this);
     this.handleStartDate = this.handleStartDate.bind(this);
     this.handleEndDate = this.handleEndDate.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
     // this.createDatesArray = this.createDatesArray.bind(this);
     this.state = {
       startDate: Moment(),
       endDate: Moment(),
-      showDateList: 'none'
+      showPage1: 'block',
+      showPage3: 'none',
+      showPage3DateList: 'none'
     };
+  }
+  handleButtonClick1 () {
+    this.setState({
+      showPage1: 'none',
+      showPage3: 'block'
+    });
+  }
+
+  handleButtonClick3 () {
+    this.setState({showPage3DateList : 'block'});
   }
 
   handleStartDate (date) {
@@ -34,10 +47,6 @@ class App extends React.Component {
       endDate: date,
       showDateList: 'none'
     });
-  }
-
-  handleButtonClick () {
-    this.setState({showDateList : 'block'});
   }
 
   // createDatesArray () {
@@ -60,7 +69,9 @@ class App extends React.Component {
 
   render () {
 
-    const visibility = this.state.showDateList;
+    const visibilityPage1 = this.state.showPage1;
+    const visibilityPage3 = this.state.showPage3;
+    const visibilityPage3DateList = this.state.showPage3DateList;
     // const dates = this.createDatesArray;
     var startDate = this.state.startDate.toString();
     var endDate = this.state.endDate.toString();
@@ -78,33 +89,40 @@ class App extends React.Component {
     }
 
     return <div>
-      <div id="start">
-        <label htmlFor="startDate">Start date</label>
-        <DatePicker
-          id="startDate"
-          selected={this.state.startDate}
-          selectsStart
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-          onChange={this.handleStartDate}
-        />
+      <div id="page-1" style={{display: visibilityPage1}}>
+        <h6>Dive in along with your friends or family to create custom itineraries</h6>
+        <button onClick={this.handleButtonClick1}>Get Started</button>
       </div>
 
-      <div id="end">
-        <label htmlFor="endDate">End date</label>
-        <DatePicker
-          id="endDate"
-          selected={this.state.endDate}
-          selectsEnd
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-          onChange={this.handleEndDate}
-        />
+      <div id="page-3" style={{display: visibilityPage3}}>
+        <div id="start">
+          <label htmlFor="startDate">Start date</label>
+          <DatePicker
+            id="startDate"
+            selected={this.state.startDate}
+            selectsStart
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+            onChange={this.handleStartDate}
+          />
+        </div>
+
+        <div id="end">
+          <label htmlFor="endDate">End date</label>
+          <DatePicker
+            id="endDate"
+            selected={this.state.endDate}
+            selectsEnd
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+            onChange={this.handleEndDate}
+          />
+        </div>
+
+        <button onClick={this.handleButtonClick3}>Confirm Dates</button>
       </div>
 
-      <button onClick={this.handleButtonClick}>Confirm Dates</button>
-
-      <div style={{display: visibility}} id="eventsOnDates">
+      <div style={{display: visibilityPage3DateList}} id="eventsOnDates">
         {dates.map((date, index) => (
           <div key={index}>
             <label>{date}</label>
