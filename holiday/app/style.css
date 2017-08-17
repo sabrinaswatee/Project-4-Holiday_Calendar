@@ -1,4 +1,7 @@
 
+/**********************************/
+/* This section is for index.html */
+/**********************************/
 body {
   background-image: url("http://3c9bl93o71m619w9kn2rfwinkdh.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/Travel-Friend-Planner1.jpg");
   background-color: beige;
@@ -11,10 +14,6 @@ img {
   width: 100%;
   max-height: auto;
   -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(1,1,1,1)), to(rgba(0,0,0,0)));
-}
-
-ul {
-  list-style-type: none;
 }
 
 footer {
@@ -33,46 +32,115 @@ footer {
   font-size: 1.1em;
 }
 
-#app {
-  margin: 0 auto;
-  text-align: center;
-}
-
-#app button {
-  margin: 2%;
-}
-
-#eventsOnDates {
-  margin-top: 2%;
-}
-
-#eventsOnDates div {
-  margin-left: 2%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-#eventsOnDates div label {
-  width: 9em;
-  text-align: left;
-}
-
-#eventsList {
-  display: run-in;
-}
-
-#events {
-  text-align: left;
-}
-
-.start .end {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .fa {
   padding: 10px;
   font-size: 15px;
   width: 50px;
   text-decoration: none;
+}
+
+
+/******************************/
+/* This section is for App.js */
+/******************************/
+#app {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/*******************/
+/* Page 1 view css */
+/*******************/
+#page-1 h6 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+/*******************/
+/* Page 2 view css */
+/*******************/
+#pageLoginSignup {
+  width: 22em;
+  margin: auto;
+  margin-top: 1%;
+}
+
+#pageLoginSignup input {
+  margin-bottom: 1%;
+}
+
+#pageLoginSignup button {
+  width: 5em;
+  margin: 2%;
+}
+
+
+/*******************/
+/* Page 3 view css */
+/*******************/
+#page-3 button {
+  margin: 1%;
+}
+
+
+/*******************/
+/* Page 4 view css */
+/*******************/
+#page-4 button {
+  margin: 1%;
+  margin-bottom: 2%;
+}
+
+#page-4-dateList {
+  width: 25em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#page-4-dateListEvents {
+  margin-left: 2%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#page-4-dateListEvents label {
+  width: 9em;
+  text-align: left;
+}
+
+#page-4-events {
+  text-align: left;
+}
+
+
+/*******************************/
+/* This section is for User.js */
+/*******************************/
+/*#pageLoginSignup {
+  width: 22em;
+  margin: auto;
+}
+
+#pageLoginSignup input {
+  margin-bottom: 1%;
+}
+
+#pageLoginSignup button {
+  width: 5em;
+  margin: 2%;
+}*/
+
+
+/*********************************/
+/* This section is for Events.js */
+/*********************************/
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#events {
+  text-align: left;
 }
