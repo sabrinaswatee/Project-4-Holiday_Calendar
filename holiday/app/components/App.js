@@ -33,12 +33,14 @@ class App extends React.Component {
     this.handleUserName = (event) => this.setState({ userName: event.target.value });
     this.handlePassWord = (event) => this.setState({ passWord: event.target.value });
     this.handleButtonClick1 = () => this.setState({ showPage1: 'none', showPage2: 'block' });
+    this.handleButtonClickAlert = () => alert('Under Construction');
     this.handleButtonClick5 = () => this.setState({ showPage3: 'none', showPage4: 'block' });
-    this.handleButtonClick6 = () => this.setState({ showPage4DateList: 'block' });
+    this.handleButtonClick6 = () => this.setState({ showPage1: 'block', showPage3: 'none', userName: '', passWord: ''});
+    this.handleButtonClick7 = () => this.setState({ showPage4DateList: 'block' });
+    this.handleButtonClick8 = () => this.setState({ showPage3: 'block', showPage4: 'none', showPage4DateList: 'none' });
 
     this.handleButtonClick2 = this.handleButtonClick2.bind(this);
     this.handleButtonClick3 = this.handleButtonClick3.bind(this);
-    this.handleButtonClick4 = this.handleButtonClick4.bind(this);
   }
 
   handleButtonClick2 (event) {
@@ -61,10 +63,6 @@ class App extends React.Component {
     this.setState((prevState) => ({ users: prevState.users.concat(newUser) }) );
     this.setState({ userName: '', passWord: '' });
     alert('Please login with your username and password')
-  }
-
-  handleButtonClick4 () {
-    alert('Under Construction');
   }
 
   // handleButtonClick3 () { this.setState({showPage3DateList : 'block'}); }
@@ -132,8 +130,9 @@ class App extends React.Component {
 
       <div id="page-3" style={{ display: visibilityPage3 }}>
         <h6>Welcome {this.state.userName}</h6>
-        <button onClick={this.handleButtonClick4}>View Saved Itineraries</button><br/>
-        <button onClick={this.handleButtonClick5}>Create New Itinerary</button>
+        <button onClick={this.handleButtonClickAlert}>View Saved Itineraries</button><br/>
+        <button onClick={this.handleButtonClick5}>Create New Itinerary</button><br/>
+        <button onClick={this.handleButtonClick6}>Log Out</button>
       </div>
 
       <div id="page-4" style={{ display: visibilityPage4 }}>
@@ -159,7 +158,7 @@ class App extends React.Component {
           />
         </div>
 
-        <button onClick={this.handleButtonClick6}>Confirm Dates</button>
+        <button onClick={this.handleButtonClick7}>Confirm Dates</button>
       </div>
 
       <div id="page-4-dateList" style={{display: visibilityPage4DateList}}>
@@ -169,6 +168,8 @@ class App extends React.Component {
             <Event id="page-4-events"/>
           </div>))
         }
+        <button onClick={this.handleButtonClickAlert}>Save Itinerary</button>
+        <button onClick={this.handleButtonClick8}>Back to Home</button>
       </div>
 
     </div>

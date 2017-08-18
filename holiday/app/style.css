@@ -24,6 +24,7 @@ footer {
 #header {
   margin-top: 55%;
   text-align: center;
+  font-weight: bold;
 }
 
 #tagline {
@@ -91,6 +92,10 @@ footer {
 #page-4 button {
   margin: 1%;
   margin-bottom: 2%;
+}
+
+#page-4-dateList button {
+  margin: 1%;
 }
 
 #page-4-dateList {
